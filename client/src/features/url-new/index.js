@@ -1,11 +1,28 @@
 import React, { useState } from "react"
+import axios from "axios"
 
 export default function UrlNew(){
-    const [ url, setUrl ] = useState("")   
+    const [ url, setUrl ] = useState("")
+    const [ output, setOutput ] = useState("")
 
     const handleSubmit = (e) => {        
         setUrl(e.target.value)
-    }   
+    }
+
+    const handleClick = (e) => {
+        e.preventDefault()
+
+        axios
+            .post("/api/url", { url })
+            .then(res => {
+                setOutput(res.data.short_url)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+
+        setUrl("")
+    }
 
     return (
         <div className="row">
@@ -24,8 +41,12 @@ export default function UrlNew(){
             </div>
 
             <div className="mt-2">
-                <button className="btn btn-primary">Compress URL</button>
-            </div>            
+                <button className="btn btn-primary" onClick={handleClick}>Compress URL</button>
+            </div>
+
+            <div className="mt-2">
+                { output && <p>The compressed URL is: <a href={"http://localhost:3000" + output}>http://localhost:3000{output}</a></p> }
+            </div> 
         </div>
     )
 }
