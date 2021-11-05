@@ -9,7 +9,7 @@ Router.post('/', (req, res) => {
     console.log(url)
 
     res.json({
-        short_url: "/yoloboi"
+        short_url: "yoloboi"
     })
 })
 

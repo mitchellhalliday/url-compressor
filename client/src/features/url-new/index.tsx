@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import ShortLink from "../short-link"
 import axios from "axios"
 
 export default function UrlNew(){
@@ -45,7 +46,9 @@ export default function UrlNew(){
             </div>
 
             <div className="mt-2">
-                { output && <p>The compressed URL is: <a href={"http://localhost:3000" + output}>http://localhost:3000{ output }</a></p> }
+                
+                <ShortLink slug={output} />
+
             </div> 
         </div>
     )
