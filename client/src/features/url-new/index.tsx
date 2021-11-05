@@ -5,11 +5,11 @@ export default function UrlNew(){
     const [ url, setUrl ] = useState("")
     const [ output, setOutput ] = useState("")
 
-    const handleSubmit = (e) => {        
+    const handleSubmit = (e : React.ChangeEvent<HTMLInputElement>) => {        
         setUrl(e.target.value)
     }
 
-    const handleClick = (e) => {
+    const handleClick = (e : React.MouseEvent) => {
         e.preventDefault()
 
         axios
@@ -45,7 +45,7 @@ export default function UrlNew(){
             </div>
 
             <div className="mt-2">
-                { output && <p>The compressed URL is: <a href={"http://localhost:3000" + output}>http://localhost:3000{output}</a></p> }
+                { output && <p>The compressed URL is: <a href={"http://localhost:3000" + output}>http://localhost:3000{ output }</a></p> }
             </div> 
         </div>
     )
