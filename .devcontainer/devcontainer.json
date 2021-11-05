@@ -1,11 +1,7 @@
 
 {
 	"name": "Node.js",
-	"build": {
-		"dockerfile": "Dockerfile",	
-	},
-	
-	// Add the IDs of extensions you want installed when the container is created.
+	"image": "mcr.microsoft.com/vscode/devcontainers/typescript-node:0-16",	
 	"extensions": [
 		"dbaeumer.vscode-eslint", // ESLint
         "esbenp.prettier-vscode", // Prettier code formatter
@@ -25,11 +21,6 @@
         "github.vscode-pull-request-github", // Github interaction
         "mongodb.mongodb-vscode"
 	],
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [3000],
-
-	//"postCreateCommand": "yarn install",
-
 	"remoteUser": "node"
 }
