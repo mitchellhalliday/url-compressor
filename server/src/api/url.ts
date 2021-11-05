@@ -1,4 +1,4 @@
-const express = require('express')
+import express from 'express'
 
 const Router = express.Router()
 
@@ -14,12 +14,10 @@ Router.post('/', (req, res) => {
 })
 
 /*
-
     Request
-  {
-      "url": "https://www.google.com"
-  }
-
+    {
+        "url": "https://www.google.com"
+    }
 */
 
-module.exports = Router
+export default Router

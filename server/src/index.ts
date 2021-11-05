@@ -1,9 +1,8 @@
-const express = require('express')
-const morgan = require('morgan')
+import express from 'express'
+import morgan from 'morgan'
+import urlRouter from './api/url'
+
 const app = express()
-
-const urlRouter = require('./api/url')
-
 
 /*
 
