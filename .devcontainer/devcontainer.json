@@ -1,7 +1,8 @@
 
 {
 	"name": "Node.js",
-	"image": "mcr.microsoft.com/vscode/devcontainers/typescript-node:0-16",	
+	"dockerComposeFile": "docker-compose.yml",
+    "service": "app",
 	"extensions": [
 		"dbaeumer.vscode-eslint", // ESLint
         "esbenp.prettier-vscode", // Prettier code formatter
