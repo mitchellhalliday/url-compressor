@@ -4,7 +4,7 @@ import axios from "axios"
 
 export default function UrlNew(){
     const [ url, setUrl ] = useState("")
-    const [ output, setOutput ] = useState("")
+    const [ slug, setSlug ] = useState("")
 
     const handleSubmit = (e : React.ChangeEvent<HTMLInputElement>) => {        
         setUrl(e.target.value)
@@ -16,7 +16,7 @@ export default function UrlNew(){
         axios
             .post("/api/url", { url })
             .then(res => {
-                setOutput(res.data.short_url)
+                setSlug(res.data.slug)
             })
             .catch(err => {
                 console.log(err)
@@ -47,7 +47,7 @@ export default function UrlNew(){
 
             <div className="mt-2">
                 
-                <ShortLink slug={output} />
+                <ShortLink slug={slug} />
 
             </div> 
         </div>
